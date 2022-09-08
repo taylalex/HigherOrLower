@@ -1,0 +1,9 @@
+Resources:
+  S3Bucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: taylalex.com
+      WebsiteConfiguration:
+        IndexDocument: index.html
+
+        
