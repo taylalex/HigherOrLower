@@ -57,9 +57,7 @@ jobs:
           no-fail-on-empty-changeset: "1"
 
       - name: Deploy to S3
-        run: aws s3 sync . s3://react-github-actions --acl public-read
-        working-directory: client/build
-
+        run: aws s3 sync application-build s3://taylalex.com --acl public-read
 
 
 
