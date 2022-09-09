@@ -47,7 +47,7 @@ jobs:
         with:
           aws-access-key-id: ${{ secrets.ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.SECRET_ACCESS_KEY }}
-          aws-region: 'eu-west-1'
+          aws-region: 'eu-west-2'
       
       - name: Deploy stack
         uses: aws-actions/aws-cloudformation-github-deploy@v1.0.3
