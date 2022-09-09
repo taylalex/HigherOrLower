@@ -30,6 +30,7 @@ jobs:
           path: ./client/build
 
   deploy:
+    needs: build
     name: Deploy stack to AWS
     runs-on: ubuntu-latest
     steps:
