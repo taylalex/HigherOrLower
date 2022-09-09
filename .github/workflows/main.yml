@@ -34,11 +34,6 @@ jobs:
     name: Deploy stack to AWS
     runs-on: ubuntu-latest
     steps:
-      - name: Get build
-        uses: actions/download-artifact@v1
-        with:
-          name: application-build
-
       - name: Checkout the Repository
         uses: actions/checkout@v3
 
@@ -55,6 +50,11 @@ jobs:
           name: MyStackerino
           template: cloudformation.yml
           no-fail-on-empty-changeset: "1"
+          
+      - name: Get build
+        uses: actions/download-artifact@v1
+        with:
+          name: application-build
 
       - name: Deploy to S3
         run: aws s3 sync application-build s3://taylalex.com --acl public-read
