@@ -58,7 +58,7 @@ jobs:
 
       - name: Deploy to S3
         run: aws s3 sync . s3://react-github-actions --acl public-read
-        working-directory: application-build
+        working-directory: build
 
 
 
