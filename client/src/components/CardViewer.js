@@ -1,16 +1,15 @@
 import styled from 'styled-components'
 
-import card from '../assets/cards/2_of_clubs.png'
-
 const Card = styled.img`
     width:15%;
 `
 
 
-function CardViewer() {
+function CardViewer(props) {
+    var cardImage = require('../assets/cards/'+ props.card + '.png')
     return(
         <>
-            <Card src={card} />
+            <Card src={cardImage} />
         </>
     )
 }
