@@ -1,7 +1,6 @@
 import styled from 'styled-components'
 
 import card from '../assets/cards/2_of_clubs.png'
-import logo from '../assets/logo.png'
 
 const Card = styled.img`
     width:15%;
