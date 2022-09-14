@@ -33,7 +33,9 @@ const ScoreWrapper = styled.div`
 const CardWrapper = styled.div`
     display:flex;
     flex-direction:row;
+    background-color:red;
     justify-content:center;
+    align-items: flex-start;
 `
 
 const ButtonWrapper = styled.div`

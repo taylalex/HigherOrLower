@@ -24,5 +24,3 @@ function getNewCard() {
     prevCard = currentCard;
     currentCard = cardValues[cardIndex]
 }
-
-console.log(getNewCard());
