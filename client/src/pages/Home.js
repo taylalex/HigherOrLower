@@ -1,9 +1,13 @@
 import styled from 'styled-components'
+import { useState } from 'react'
 
 import logo from '../assets/logo.png'
 
 import CardViewer from '../components/CardViewer'
-import GameButtons from '../components/GameButtons'
+import HigherButton from '../components/HigherButton'
+import LowerButton from '../components/LowerButton'
+
+import { getState, guessHigher, guessLower } from '../game'
 
 const Header = styled.div`
     margin: auto;
@@ -17,6 +21,13 @@ const Logo = styled.img`
     margin: auto;
 
     display: block;
+`
+
+const ScoreWrapper = styled.div`
+    padding: 10px;
+
+    font-family: Arial;
+    text-align: center;
 `
 
 const CardWrapper = styled.div`
@@ -41,18 +52,32 @@ const Footer = styled.div`
     color: white;
 `
 
-
 function Home() {
+    const [card, setCard] = useState(getState().currentCard);
+    const [score, setScore] = useState(getState().score);
+
     return (
         <>
             <Header>
                 <Logo src={logo}/>
             </Header>
+            <ScoreWrapper>
+                {score}
+            </ScoreWrapper>
             <CardWrapper>
-            <CardViewer />
-                </CardWrapper>
+                <CardViewer card={card} />
+            </CardWrapper>
             <ButtonWrapper>
-                <GameButtons />
+                <HigherButton onClick={() => {
+                    guessHigher();
+                    setCard(getState().currentCard);
+                    setScore(getState().score)
+                }}/>
+                <LowerButton onClick={() => {
+                    guessLower();
+                    setCard(getState().currentCard);
+                    setScore(getState().score)
+                }}/>
             </ButtonWrapper>
             <Footer>
                 Created by Taylor Stubbs
@@ -60,5 +85,7 @@ function Home() {
         </>
     )
 }
+
+
 
 export default Home;
