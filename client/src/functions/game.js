@@ -26,4 +26,3 @@ function getNewCard() {
 }
 
 console.log(getNewCard());
-
